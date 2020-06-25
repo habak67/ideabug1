@@ -1,0 +1,23 @@
+syntax = "proto3";
+package ideabug1;
+
+option go_package = "github.com/habak67/ideabug1/pb";
+
+message Value {
+    oneof value {
+        bool boolean = 2;
+        int32 integer = 3;
+        List list = 4;
+        Map struct = 5;
+        // Regexp is represented by a string
+        string str = 6;
+    }
+}
+
+message List {
+    repeated Value values = 1;
+}
+
+message Map {
+    map<string, Value> fields = 1;
+}

@@ -1,0 +1,1 @@
+module "github.com/habak67/idea-bug1"
